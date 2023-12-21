@@ -23,7 +23,7 @@ def face(inputImgPath):
 
     imgName =os.path.basename(inputImgPath)
     imgName =imgName.split('.')
-    filename ="../画像保存先/ " +imgName[0]  + "_rectangle.jpg"
+    filename ="../画像保存先/" +imgName[0]  + "_rectangle.jpg"
     #print(filename)
     cv2.imwrite(filename, img)
 
