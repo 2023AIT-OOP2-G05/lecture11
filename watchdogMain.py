@@ -8,6 +8,7 @@ from watchdog.observers import Observer
 from izawa import izawa
 from face_waku import face
 from canny_edge import edge
+from face_mozaiku import mozaiku
 
 class MyWatchHandler(FileSystemEventHandler):
     """監視ハンドラ"""
@@ -35,7 +36,9 @@ class MyWatchHandler(FileSystemEventHandler):
         izawa(filepath)
         face(filepath)
         edge(filepath)
+        mozaiku(filepath)
 
+        print("画像処理全部終わった!!")
 
 def monitor(path):
     """監視実行関数
