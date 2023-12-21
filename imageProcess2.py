@@ -19,9 +19,8 @@ def face(inputImgPath):
             #cv2.imshow('img', img)
             #cv2.waitKey(0)
     else:
-        print('Nothing')
+        print('顔Nothing')
 
-    print("OK")
     imgName =os.path.basename(inputImgPath)
     imgName =imgName.split('.')
     filename ="../画像保存先/ " +imgName[0]  + "_rectangle.jpg"
