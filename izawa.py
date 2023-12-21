@@ -1,3 +1,4 @@
+#imgprocess1として別ファイルに変更済み
 import numpy as np
 import cv2
 
