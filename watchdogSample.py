@@ -1,3 +1,5 @@
+#ディレクトリ構造、この一個前に 画像保存先 フォルダを作る
+
 import time
 from argparse import ArgumentParser
 
@@ -5,6 +7,7 @@ from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 from izawa import izawa
 from face_waku import face
+from canny_edge import edge
 
 class MyWatchHandler(FileSystemEventHandler):
     """監視ハンドラ"""
@@ -28,9 +31,10 @@ class MyWatchHandler(FileSystemEventHandler):
         #print(f"[on_created] {event}")
         print("画像処理中...")
         print("")
+        #画像処理追加↓↓!!
         izawa(filepath)
         face(filepath)
-        #画像処理追加!!
+        edge(filepath)
 
 
 def monitor(path):
