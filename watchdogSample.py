@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
-from imageProcess1 import izawa
+from izawa import izawa
 
 class MyWatchHandler(FileSystemEventHandler):
     """監視ハンドラ"""
