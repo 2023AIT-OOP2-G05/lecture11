@@ -22,8 +22,11 @@ class MyWatchHandler(FileSystemEventHandler):
         Args:
             event: イベント
         """
-        print(f"[on_created] {event}")
-        print("ここに画像処理をする!!")
+        filepath = event.src_path
+        print("追加された画像のパス:"+filepath)
+        #print(f"[on_created] {event}")
+        print("----------------------------")
+        print("ここで画像処理をする!!")
         #画像処理追加!!
 
 
