@@ -1,8 +1,8 @@
 import cv2
-
+import os
 # 画像の読み込み
-def mozaiku():
-    image = cv2.imread('0220kenya-002.jpg')
+def mozaiku(inputImgPath):
+    image = cv2.imread(inputImgPath)
 
     # Haar Cascade 分類器の読み込み
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -20,10 +20,17 @@ def mozaiku():
         image[y:y+h, x:x+w] = face_roi
 
     # 結果の表示
-    cv2.imshow('Mosaic Faces', image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
+    #cv2.imshow('Mosaic Faces', image)
+    #cv2.waitKey(0)
+    #cv2.destroyAllWindows()
+        
+    # 編集した画像を保存する
+    imgName =os.path.basename(inputImgPath)
+    imgName =imgName.split('.')
+    filename ="../画像保存先/" +imgName[0]  + "_faceMozaiku.jpg"
+    #print(filename)
+    cv2.imwrite(filename, image)
+    print("faceMozaiku OK")
 if __name__ == "__main__":
-    app = mozaiku()
-    app.run()
+    mozaiku("0220kenya-002.jpg")
+    
