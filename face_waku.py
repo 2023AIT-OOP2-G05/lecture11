@@ -14,19 +14,21 @@ def face(inputImgPath):
     faces = cascade.detectMultiScale(img, scaleFactor=1.1,minNeighbors=5, minSize=(30,30))
     #赤枠処理、表示
     if len(faces):
+        print('顔あり' ,end=",") #改行させないためのend
         for (x,y,w,h) in faces:
             cv2.rectangle(img, (x,y), (x+w, y+h), (0, 0, 255), thickness=2)
             #cv2.imshow('img', img)
             #cv2.waitKey(0)
     else:
-        print('顔Nothing')
+        print('顔Nothing' ,end=",")
 
+    # 編集した画像を保存する
     imgName =os.path.basename(inputImgPath)
     imgName =imgName.split('.')
     filename ="../画像保存先/" +imgName[0]  + "_faceRectangle.jpg"
     #print(filename)
     cv2.imwrite(filename, img)
-    print("face-waku ok")
+    print("face_waku OK")
 if __name__ == "__main__":
-    app = face()
-    app.run()
+    face("0220kenya-002.jpg")
+    

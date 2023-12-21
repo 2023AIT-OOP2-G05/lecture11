@@ -17,10 +17,11 @@ def izawa (inputImgPath):
                 continue
             img[y, x] = 0, g, r
 
-    print("izawa OK")
+    
     # 編集した画像を保存する
     imgName =os.path.basename(inputImgPath)
     imgName =imgName.split('.')
     filename ="../画像保存先/" +imgName[0]  + "_exceptBlue.jpg"
     #print(filename)
     cv2.imwrite(filename, img)
+    print("izawa OK")
