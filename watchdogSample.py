@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 from imageProcess1 import izawa
-
+from imageProcess2 import face
 class MyWatchHandler(FileSystemEventHandler):
     """監視ハンドラ"""
 
@@ -28,7 +28,7 @@ class MyWatchHandler(FileSystemEventHandler):
         print("画像処理中...")
         print("")
         izawa(filepath)
-        
+        face(filepath)
         #画像処理追加!!
 
 
