@@ -1,3 +1,4 @@
+#ディレクトリ構造、この一個前に 画像保存先 フォルダを作る
 import cv2
 import os
 def izawa (inputImgPath):
