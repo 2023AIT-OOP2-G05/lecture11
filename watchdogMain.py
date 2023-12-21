@@ -9,6 +9,7 @@ from izawa import izawa
 from face_waku import face
 from canny_edge import edge
 from face_mozaiku import mozaiku
+from GrayScaleAndBinary import grayScaleAndBinary
 
 class MyWatchHandler(FileSystemEventHandler):
     """監視ハンドラ"""
@@ -37,8 +38,9 @@ class MyWatchHandler(FileSystemEventHandler):
         face(filepath)
         edge(filepath)
         mozaiku(filepath)
+        grayScaleAndBinary(filepath)
 
-        print("画像処理全部終わった!!")
+        print("\n画像処理全部終わった!!")
 
 def monitor(path):
     """監視実行関数
