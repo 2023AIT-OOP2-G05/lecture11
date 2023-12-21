@@ -22,5 +22,6 @@ def izawa (inputImgPath):
     #TODO　保存先どうするか
     imgName =os.path.basename(inputImgPath)
     imgName =imgName.split('.')
-    filename =imgName[0]  + "_exceptBlue.jpg"
+    filename ="../画像保存先/ " +imgName[0]  + "_exceptBlue.jpg"
+    #print(filename)
     cv2.imwrite(filename, img)
