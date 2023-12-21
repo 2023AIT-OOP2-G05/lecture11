@@ -15,5 +15,5 @@ def edge(inputImgPath):
     cv2.imwrite(filename, edge_img)
     print("canny_edge OK")
 if __name__ == "__main__":
-    app = edge("0220kenya-002.jpg")
-    app.run()
+    edge("0220kenya-002.jpg")
+    
