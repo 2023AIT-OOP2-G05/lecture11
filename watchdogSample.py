@@ -1,3 +1,5 @@
+#ディレクトリ構造、この一個前に 画像保存先 フォルダを作る
+
 import time
 from argparse import ArgumentParser
 
