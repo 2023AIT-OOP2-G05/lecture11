@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 from izawa import izawa
+from face_waku import face
 
 class MyWatchHandler(FileSystemEventHandler):
     """監視ハンドラ"""
@@ -28,7 +29,7 @@ class MyWatchHandler(FileSystemEventHandler):
         print("画像処理中...")
         print("")
         izawa(filepath)
-        
+        face(filepath)
         #画像処理追加!!
 
 
