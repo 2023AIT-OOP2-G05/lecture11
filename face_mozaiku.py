@@ -9,19 +9,19 @@ def mozaiku(inputImgPath):
 
     # 顔検出
     faces = face_cascade.detectMultiScale(image, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
-    x =0 #モザイクありなら1,なければ0
+    count =0 #モザイクありなら1,なければ0
     # 検出された顔にモザイクを適用
     for (x, y, w, h) in faces:
-        if(x ==0):
+        if(count ==0):
             print('顔あり' ,end=",") #改行させないためのend
-            x =1
+            count =1
         # 顔領域の切り抜き
         face_roi = image[y:y+h, x:x+w]
 
         # 顔領域にモザイクを適用
         face_roi = cv2.GaussianBlur(face_roi, (99, 99), 30)
         image[y:y+h, x:x+w] = face_roi
-    if (x==0):
+    if (count==0):
         print('顔Nothing' ,end=",")
     # 結果の表示
     #cv2.imshow('Mosaic Faces', image)
