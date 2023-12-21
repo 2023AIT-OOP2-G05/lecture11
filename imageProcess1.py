@@ -1,4 +1,5 @@
 import cv2
+import os
 def izawa (inputImgPath):
     #画像の読み込み
     #TODO　画像の名前取得
@@ -19,4 +20,7 @@ def izawa (inputImgPath):
     print("OK")
     # 編集した画像を保存する
     #TODO　保存先どうするか
-    cv2.imwrite('change_color.png', img)
+    imgName =os.path.basename(inputImgPath)
+    imgName =imgName.split('.')
+    filename =imgName[0]  + "_exceptBlue.jpg"
+    cv2.imwrite(filename, img)
