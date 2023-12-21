@@ -3,8 +3,9 @@ from argparse import ArgumentParser
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
-from imageProcess1 import izawa
-from imageProcess2 import face
+from izawa import izawa
+from face_waku import face
+
 class MyWatchHandler(FileSystemEventHandler):
     """監視ハンドラ"""
 

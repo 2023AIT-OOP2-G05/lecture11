@@ -16,18 +16,17 @@ def face(inputImgPath):
     if len(faces):
         for (x,y,w,h) in faces:
             cv2.rectangle(img, (x,y), (x+w, y+h), (0, 0, 255), thickness=2)
-            cv2.imshow('img', img)
-            cv2.waitKey(0)
+            #cv2.imshow('img', img)
+            #cv2.waitKey(0)
     else:
-        print('Nothing')
+        print('顔Nothing')
 
-    print("OK")
     imgName =os.path.basename(inputImgPath)
     imgName =imgName.split('.')
-    filename ="../画像保存先/ " +imgName[0]  + "_exceptBlue.jpg"
+    filename ="../画像保存先/" +imgName[0]  + "_faceRectangle.jpg"
     #print(filename)
     cv2.imwrite(filename, img)
-
+    print("face-waku ok")
 if __name__ == "__main__":
     app = face()
     app.run()
