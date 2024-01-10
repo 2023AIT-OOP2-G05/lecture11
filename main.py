@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import os
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
@@ -25,6 +26,16 @@ def getPicture():
     # ファイルの保存
     # (プロジェクトディレクトリ内のディレクトリ「uploads-picture/」に保存している)
     file.save("uploads-picture/" + file.filename)
+
+
+# ただアップロードした画像を表示する
+@app.route("/picture_list/", methods=["GET"])
+def getPictureList():
+    # 'uploads-picture/' ディレクトリ内のファイルのリストを取得
+    picture_files = os.listdir("uploads-picture/")
+
+    # テンプレートに写真のリストを渡してレンダリング
+    return render_template("picture_list.html", picture_files=picture_files)
 
 #-----#
 
